@@ -1,0 +1,1 @@
+web: gunicorn reto3Innovaccion.wsgi --log-file -

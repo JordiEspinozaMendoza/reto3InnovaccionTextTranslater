@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Reto 3 Innovaccion</title>
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="{% static 'assets/css/Footer-Basic.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md" style="background-color: red;">
+        <div class="container-fluid"><a class="navbar-brand" href="#"
+                style="color: white;font-family: 'Montserrat';"><svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                    height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-chat-right-text-fill">
+                    <path fill-rule="evenodd"
+                        d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM3.5 3a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z">
+                    </path>
+                </svg>&nbsp; Lectura de Texto</a><button data-toggle="collapse" class="navbar-toggler"
+                data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav">
+                    <li class="nav-item"></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item">
+                        <div></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="main" style="min-height: 750px;display: flex;align-items: center;justify-content: center;flex-direction: column;
+    padding: 8rem;">
+    <h2>Inserta una imagen y detecta el texto en ella</h2>
+        <form method="POST"  enctype="multipart/form-data">
+            {% csrf_token %}
+            <div style="font-family: 'Montserrat';">
+                {{form.as_p}}
+            </div>
+            <input type="submit" value="Enviar">
+
+        </form>
+        {% if areResults %}
+            <h2 class="mt-2">Resultados:</h2>
+            <span>{{results}}</span>
+        {% endif %}
+    </div>
+    <footer class="footer-basic" style="background-color: red;color: white;">
+        <p class="copyright" style="color: white;font-family: 'Montserrat';">Innovacción virtual © 2021</p>
+    </footer>
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>
