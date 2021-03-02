@@ -4,9 +4,10 @@ from msrest.authentication import CognitiveServicesCredentials
 import matplotlib.pyplot as plt
 from PIL import Image, ImageDraw
 import os
+from decouple import config
 
-cog_key = '8b037990dca547829c4cccf5e3452f34'
-cog_endpoint = 'https://cognitiveservicesreto3.cognitiveservices.azure.com/'
+cog_key = config('cog_key')
+cog_endpoint = config('cog_endpoint')
 
 # print('Ready to use cognitive services at {} using key {}'.format(cog_endpoint, cog_key))
 # Get a client for the computer vision service
